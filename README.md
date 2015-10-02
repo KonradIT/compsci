@@ -1,4 +1,4 @@
-#Computer Science Classword/Homeword Repo
+#Computer Science Classwork/Homework Repo
 
 **By @KonradIT Konrad Iturbe**
 
