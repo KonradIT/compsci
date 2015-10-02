@@ -4,4 +4,4 @@
 
 ##Navigate
 
-> master / [MONTH] / [DAY] / content.md
+termX / [MONTH] / [DAY] / content.md
