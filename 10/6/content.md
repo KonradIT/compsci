@@ -1,6 +1,6 @@
 #Homework for 10/06
 
-Page: eBay
+Page: eBay.com
 
 Lets propose a user wants to create a new account in eBay. 
 
@@ -29,7 +29,7 @@ If any of the required boxes does not match the data or the string returns null,
 ![](http://i.imgur.com/su0rvTV.png)
 
 ##Screen 2
-![]http://i.imgur.com/W4x6NKP.png?1)
+![](http://i.imgur.com/W4x6NKP.png?1)
 
 ##Screen 3
 
