@@ -15,16 +15,27 @@ The task is init'd, the string ```a``` is set to value 0, then the ```a``` is se
 
 #####Example:
 
+```
 WHILE x=y
 DO
 print "this is just a random string"
 ELSE
 do(run/whatever.sh)
 DONE
+```
 
 **Python script:** [script.py](https://github.com/KonradIT/compsci/blob/term1/10/9/script.py)
 
 ###Indentation exercise
 
-
-
+```
+WHILE Student Counter <= 10
+DO
+  INPUT Exam Result
+    IF Exam Result => 20
+      Passes=Passes+1
+    ELSE
+      Failures=Failures+1
+    ENDIF
+ENDWHILE
+```
