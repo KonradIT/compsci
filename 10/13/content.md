@@ -13,5 +13,5 @@ Task: Create a trace table and a float chart for a system that contains L and M 
 | Loop | M  | L  | Out |   |
 |------|----|----|-----|---|
 | 0    | 14 | 14 | NO  |   |
-| 1    | 15 | 15 |     |   |
+| 1    | 15 | 15 | YES |   |
 |      |    |    |     |   |
