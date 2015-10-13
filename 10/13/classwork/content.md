@@ -37,7 +37,7 @@
 
 code:
 
-``
+```
 ÌNPUT x
 INPUT y
 IF x + y <> 0
@@ -47,6 +47,7 @@ IF x + y <> 0
   ELSE
     OUTPUT "Stack overflow"
 ENDIF
+
 ```
 
 | Run Number | X | Y | Result |
