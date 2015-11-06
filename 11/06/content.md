@@ -18,3 +18,15 @@
 * Green - My cover for the 5X will be Green
 * Worcestershire - The total area of Worcestershire is 1,741 km2
 
+* Distance=real
+* Room width=real
+* ISBN=whole
+* temperature=real
+* nº of red cards=whole
+
+Short = up to 65536
+
+Long=unlimited bytes!
+
+Short=10
+Long=45M
