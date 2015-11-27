@@ -37,6 +37,18 @@ def optionA():
                         print("\nThe stats for",playerId,"are:")
                         print("*"*75)
                         print("\t",row[1],"\t\t",row[2])
+			print("\n\tActivity\tExercise time in minutes")
+			print("-"50)
+			print("\t"row[2],"\t\t",row[3])
+			print("\t"row[4],"\t\t",row[5])
+			print("\t"row[6],"\t\t",row[7])
+			print("\t"row[8],"\t\t",row[9])
+			print("\t"row[10],"\t\t",row[11])
+			total=int(row[3])+int(row[5]+int(row[7])+int(row[9])+int(row[11])
+			print("\n\t\tTotal time,"total)
+	if validA==False:
+		print("Incorrect ID")
+		optionA()
 def optionB():
 	validB=False
 	while validB==False:
