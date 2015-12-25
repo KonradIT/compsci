@@ -4,8 +4,8 @@
 
 #####Paper 1:
 
-* von Neumann computer architecture
-* Truth Tables
+* ~~von Neumann computer architecture~~
+* ~~Truth Tables~~
 * Storage Devices
 * Parallel and serial transmissions
 * Microprocessor
