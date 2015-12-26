@@ -6,7 +6,7 @@
 
 * ~~von Neumann computer architecture~~
 * ~~Truth Tables~~
-* Storage Devices
+* ~~Storage Devices~~
 * Parallel and serial transmissions
 * Microprocessor
 * URLs
