@@ -7,9 +7,9 @@
 * ~~von Neumann computer architecture~~
 * ~~Truth Tables~~
 * ~~Storage Devices~~
-* Parallel and serial transmissions
-* Microprocessor
-* URLs
+* ~~parallel and serial transmissions~~
+* ~~microprocessor~~
+* ~~URLs~~
 * Output Devices
 * USB
 * Binary
