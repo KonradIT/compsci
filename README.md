@@ -10,15 +10,15 @@
 * ~~parallel and serial transmissions~~
 * ~~microprocessor~~
 * ~~URLs~~
-* Output Devices
-* USB
-* Binary
-* Hexadecimal
-* Registers
-* Input Devices
-* Interpreter and Compiler
-* Logic Gates
-* Denary
+* ~~Output Devices~~
+* ~~USB~~
+* ~~Binary~~
+* ~~hexadecimal~~
+* ~~registers~~
+* ~~Input Devices~~
+* ~~Interpreter and Compiler~~
+* ~~Logic Gates~~
+* ~~Denary~~
 * Internet Security
 * Web Servers
 * Sensors
