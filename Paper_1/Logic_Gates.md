@@ -35,6 +35,7 @@ if(a=1);
 | Input A | Input B |
 |---------|---------|
 | 0       | 1       |
+| 1       | 0       |
 
 ####Advanced ones
 
