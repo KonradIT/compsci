@@ -19,17 +19,17 @@
 * ~~Interpreter and Compiler~~
 * ~~Logic Gates~~
 * ~~Denary~~
-* Internet Security
-* Web Servers
-* Sensors
+* ~~Internet Security~~
+* ~~Web Servers~~
+* ~~Sensors~~
 
 #####Paper 2:
 
-* Pseudocode… obviously
-* Variables
-* Data Types
-* Databases (Tables and queries)
-* Trace Tables
+* ~~Pseudocode… obviously~~
+* ~~Variables~~
+* ~~Data types~~ 
+* ~~Databases (Tables and queries)~~
+* ~~Trace Tables~~
 * Flowcharts
 * Constants
 * Validation
