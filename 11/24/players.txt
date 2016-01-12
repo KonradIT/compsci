@@ -1,2 +1,0 @@
-J Cena,Goals,12,Assists,22,Yellow Cards,11,Red Cards,1
-B Sanders,Goals,22,Assists,21,Yellow Cards,5,Red Cards,2
