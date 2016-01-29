@@ -10,7 +10,6 @@
 |---------------|-----------------|---------------------------|
 | String | "Hello, World!" | 1 Byte for each character |
 | Real | 12.3 | 4 or 8 bytes |
-| Boolean | True | 4 bytes |
-| Integer | 56 | 1 byte |
+| Boolean | True | 1 byte |
+| Integer | 56 | 4 bytes |
 | Char | "Y" | 1 byte |
-
