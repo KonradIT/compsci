@@ -62,8 +62,44 @@ print("Help, I need somebody\nHelp, not just anybody\nHelp, you know, I need som
 *A2.7*
 
     print("X     X  XXXXXXX\nX    X     XX\nX   X      XX\nX  X       XX\nX X        XX\nXX         XX\nX X        XX\nX  X       XX\nX   X      XX\nX    X     XX\nX     X  XXXXXX\n")
+    
+````
+X     X  XXXXXXX
+X    X     XX
+X   X      XX
+X  X       XX
+X X        XX
+XX         XX
+X X        XX
+X  X       XX
+X   X      XX
+X    X     XX
+X     X  XXXXXX
+```
 
 *A2.8*
+
+* A = Program Code
+* B Le English
+* C = Description
+* D = Flowchart
+* E = Pseudocode
+* 
+*A2.9*
+
+print("Le Face")
+print(" :-)")
+
+*A3.1*
+
+
+* / = Division
+* + = Sum
+* * = Multiply
+* ** = Power
+* - = subtraction
+* // = char escape
+* % = percentage
 
 
 
