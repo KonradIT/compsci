@@ -87,8 +87,8 @@ X     X  XXXXXX
 * 
 *A2.9*
 
-print("Le Face")
-print(" :-)")
+    print("Le Face")
+    print(" :-)")
 
 *A3.1*
 
