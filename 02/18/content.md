@@ -59,3 +59,62 @@ print("total: ",int(out2)+int(bill))
 ```
 
 **6.7**
+
+1. 
+
+```
+number=input("number: ")
+number=int(number)**2
+print(number)
+```
+
+2.
+```
+number=input("number: ")
+number=int(number)**3
+print(number)
+```
+
+3.
+```
+number=input("side of a square: ")
+number=int(number)*4
+print(number)
+```
+
+4.
+```
+length=input("length: ")
+width=input("width: ")
+length=int(length)*2
+width=int(width)*2
+out=int(length)+int(width)
+print(out)
+```
+
+5.
+```
+length=input("length: ")
+out=int(length)*2
+print(out)
+```
+
+6.
+
+```
+length=input("length: ")
+width=input("width: ")
+depth=input("depth: ")
+out=int(length)*int(width)*int(depth)
+print(out)
+```
+
+7.
+
+*As time of writing* 
+
+```
+pounds=input("pounds: ")
+out=int(pounds)*1.29
+print(out)
+```
