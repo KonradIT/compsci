@@ -62,3 +62,13 @@ for index in range(len(myArray)):
    multiply=eval(myArray[index])*2
    print('Number:', myArray[index], 'multiplied by 2: ',multiply)
 ```
+
+##Search for cat in text and print the line:
+
+```
+file=open("text.txt")
+for line in file:
+	if "cat" in line:
+		print(line)
+file.close()
+```
