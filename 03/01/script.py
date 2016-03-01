@@ -22,3 +22,13 @@ for index in range(0,len(studentMark)):
 	total=total+studentMark[index]
 print(studentMark)
 print("Total marks: ", total)
+
+"""
+Pseudocode:
+studentMark = [1,2,3,4]
+total=0
+FOR index IN range(studentMark)
+	total = total + studentMark[index]
+WRITE studentMark
+WRITE "Total Marks: " + total
+"""
