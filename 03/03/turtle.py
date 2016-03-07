@@ -1,5 +1,6 @@
-#Had to do it for science
 import turtle
+import time
+
 green = turtle.Turtle()
 red = turtle.Turtle()
 blue = turtle.Turtle()
@@ -8,7 +9,7 @@ yellow = turtle.Turtle()
 green.color("green")
 green.forward(100) 
 green.left(270) 
-green.forward(100) 
+green.forward(100)
 
 red.color("red")
 red.left(90)  
@@ -27,3 +28,16 @@ yellow.forward(100)
 yellow.right(90)
 yellow.forward(100)
 
+time.sleep(5)
+green.left(270) 
+green.forward(100)
+red.left(270)
+red.forward(100)
+blue.left(270)
+blue.forward(100)
+yellow.right(90)
+yellow.forward(100)
+
+time.sleep(5)
+turtle.write("WE DON'T TRACK YOU /s",align="center", font=("Arial", 16, "normal"))
+time.sleep(5)
