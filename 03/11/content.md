@@ -8,3 +8,11 @@
 | Date/Time | Enables long, medium and short date/time formats | DOB |
 | Number | Prevents letters and numbers being entered | Age |
 
+##How to encode dates
+
+January = Jan or 01
+
+February = Feb or 02
+
+---
+
