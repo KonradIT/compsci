@@ -95,22 +95,31 @@ The color the eyes, the height, the color of the skin, the distance from the eye
 | ADVANTAGES                                   | DISADVANTAGES                              |
 |----------------------------------------------|--------------------------------------------|
 | Very efficient method of finding out data of an entry | Scan may not be possible if barcode is dim |
-| Can be used to keep record of sales levels for a product | Barcode data needs to be scanned in a computer otherwise the barcode scanner can’t identify the entity being scanned |
+| Can be used to keep record of sales levels for a product | Barcode data needs to be scanned in a computer otherwise the barcodescanner can’t identify the entity being scanned |
 
 
 
 ###QR: Throwback to 2012
 
 Consist of several black squares, including three big ones positioned in corners
+
 While normal barcodes are onedimensional; storing data in a single line of black and white bars, qr codes are 2D; storing data both vertically and horizontally in several squares.
+
 Normal barcodes can store approximately 30 different numbers whereas qr codes can store around 7000.
+
 A QR code reader is used to scan the data on the (QR) code, which can be used to store data or links to specific Internet content.
+
 You can make your own QR codes online with a generator!
 
+
 Very efficient at storing and linking information
+
 Smartphone is required for scanning
+
 Code can still be read even if it is partially obsfucated
+
 Not as common as barcode
+
 Can store a variety of _ _ _ o _ _ a _ _ _ _ including website links, videos, images and messages
 
 
