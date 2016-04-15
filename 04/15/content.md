@@ -49,5 +49,13 @@ In-game speech and other speech inputs for smart television control and usage ar
 | Enables the use of speech-recognition                                      | Sound may not be accurately recorded                                      |
 | Disabled end users with hand and finger impairment can use audio equipment | End users require training with speech-recognition systems prior to usage |
 
+---
 
+#Security
+
+* Protocol
+* Client
+* Modem/Router
+* internet service provider (ISP) ([COMCAST](http://i.imgur.com/gVbbNsO.jpg))
+* web browser
 
