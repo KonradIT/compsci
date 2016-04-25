@@ -67,3 +67,11 @@ Total Payment Per Item >        |         |
 Total Price = Price*Quantity >  |         |
                                 -----------
 ```
+
+The process of producing an algorithm by breaking down an overall task into smaller tasks is known as top-down design.
+The process of breaking down large tasks into smaller tasks is referred to as decomposition.
+To illustrate a breakdown of tasks and how tasks relate to one another, structure diagrams can be produced.
+An individual section of the algorithm and part of program´s overall code is referred to as a module.
+
+
+
