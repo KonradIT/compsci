@@ -29,8 +29,41 @@ The business might hold a trademark of the image, such as the GoPro (TM) logo.
 | Term    | Definition                                                                                                                                                                    |
 |---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Malware | A computer program unlawfully to disrupt or damage a computer system. It can be attached to email communications and downloaded when email attachments or links are selected. |
-| Cracked | Access gained to a system designed by breaking through software methods                                                                                                       |
-| Hacked  | Access gained to a system, security or website with the purpose of changing or defacing it                                                                                    |
+| Cracked | Access gained to a system, security or website with the purpose of changing or defacing it                               |
+| Hacked  | Access gained to a system designed by breaking through software methods                                                                                    |
 
+---
 
+A group of related parts that perform a specific task for a larger system. 
 
+In programming, one sub-system or subroutine is normally represented by a small section of code within a program
+
+How come Office software programs from Microsoft function similarly, like Access(left) and Excel (right), below?
+
+Both are developed my Micro$oft Corp
+
+*  Subroutine- A commonly used function that is available to a programmer
+*  Library Routine - A short section of code within a program
+
+How can we plan a system that consists of sub systems?
+
+Subsystem = SystemUI, kernel, app loader, etc... AKA TopDown design
+
+What data does a system require to calculate the number of hours an employee has worked for a company?
+
+Hours worked, money/hour
+
+###Subsystems
+
+```
+                                -----------
+Customer Name >                 |         |
+Customer Address >              |         |
+Postcode >                      |         |
+ItemID >                        | Machine |
+Quantity >                      |         |
+Price Per Item >                |         |
+Total Payment Per Item >        |         |
+Total Price = Price*Quantity >  |         |
+                                -----------
+```
