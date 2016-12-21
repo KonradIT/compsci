@@ -15,12 +15,15 @@ print("PYTHON SHOOTER GAME")
 print("Small weapon = limitless")
 print("Medium Weapon = 1 available, does +5 damage")
 print("Big Weapon = 1 available, does +10 damage")
-print("Game started!")
+print("--------------")
 
+print("Player config:")
+player1_name=input("Player 1 name: ")
+player2_name=input("Player 1 name: ")
 while playerPlayed != 2:
-    #Player 1 plays:
+    #player1_name plays:
     if(player1 > 0):
-        weaponchoice=input("Player 1:\nUse \"b\" for Big Weapon,\"m\" for Medium Weapon,\"s\" for Small Weapon\n")
+        weaponchoice=input(player1_name + ":\nUse \"b\" for Big Weapon,\"m\" for Medium Weapon,\"s\" for Small Weapon\n")
         if(weaponchoice=="s"):
             points=int(random.randint(0, 10))
             if(points==0):
@@ -34,8 +37,8 @@ while playerPlayed != 2:
                 lastUsed=5
                 mwCount=mwCount+1
                 if(player1 < 1):
-                    print("Player 1: You have 0 lives, you lost.\n")
-                    print("Player 2: Won!\n")
+                    print(player2_name: + "You have 0 lives, you lost.\n")
+                    print(player1_name: + "Won!\n")
                     exit()
             else:
                 print("You have used all your Medium Sized Weapons.\n")
@@ -45,20 +48,21 @@ while playerPlayed != 2:
                 lastUsed=10
                 bwCount=bwCount+1
                 if(player1 < 1):
-                    print("Player 1: You have 0 lives, you lost.\n")
-                    print("Player 2: Won!\n")
+                    print(player2_name: + "You have 0 lives, you lost.\n")
+                    print(player1_name: + "Won!\n")
                     exit()
             else:
                 print("You have used all your Big Sized Weapons.\n")
 
 
-        print("Player 2: " + str(player2) + " points left!\n")
+        print(player2_name:  + str(player2) + " points left!\n")
     else:
-        print("Player 2: You have 0 lives, you lost.\n")
-        print("Player 1: Won!\n")
+        print(player2_name: +"You have 0 lives, you lost.\n")
+        print(player1_name: + "Won!\n")
         exit()
+
     if(player2 > 0):
-        weaponchoice=input("Player 2:\nUse \"bigweapon\",\"mediumweapon\",\"smallweapon\"\n")
+        weaponchoice=input("player2_name:\nUse \"b\" for Big Weapon,\"m\" for Medium Weapon,\"s\" for Small Weapon\n")
         if(weaponchoice=="s"):
             points=int(random.randint(0, 10))
             if(points==0):
@@ -72,8 +76,8 @@ while playerPlayed != 2:
                 lastUsedTwo=5
                 mwCountTwo=mwCountTwo+1
                 if(player2 < 1):
-                    print("Player 2: You have 0 lives, you lost.\n")
-                    print("Player 1: Won!\n")
+                    print("player1_name: You have 0 lives, you lost.\n")
+                    print("player2_name: Won!\n")
                     exit()
             else:
                 print("You have used all your Medium Sized Weapons.\n")
@@ -83,15 +87,15 @@ while playerPlayed != 2:
                 lastUsedTwo=10
                 bwCountTwo=bwCountTwo+1
                 if(player2 < 1):
-                    print("Player 2: You have 0 lives, you lost.\n")
-                    print("Player 1: Won!\n")
+                    print("player1_name: You have 0 lives, you lost.\n")
+                    print("player2_name: Won!\n")
                     exit()
             else:
                 print("You have used all your Big Sized Weapons.\n")
 
 
-        print("Player 1: " + str(player1) + " points left!\n")
+        print("player1_name: " + str(player1) + " points left!\n")
     else:
-        print("Player 2: You have 0 lives, you lost.\n")
-        print("Player 1: Won!\n")
+        print("player2_name: You have 0 lives, you lost.\n")
+        print("player1_name: Won!\n")
         exit()
