@@ -1,4 +1,5 @@
 #Battle game:
+#Created by Konrad Iturbe
 import random
 player1 = 100 #defines the Health count
 player2 = 100 #defines the Health count

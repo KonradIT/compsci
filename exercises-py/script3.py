@@ -1,5 +1,0 @@
-filename = input("Name of file to load, e.g. File Name.txt: ")
-file = open(filename,"w")
-newText = input("Write the new text: ")
-file.write(newText)
-file.close()

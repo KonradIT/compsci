@@ -1,2 +1,0 @@
-Surname="hello"
-print(Surname)
