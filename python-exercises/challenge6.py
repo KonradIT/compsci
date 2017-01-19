@@ -21,14 +21,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 import random
 #variables:
 questionCount=0
+correctCount=0
 questionArray =["Who is/was the President of the United States of America during 2017 - 2025?","In what year was YouTube founded?","Where was the first iPhone unveiled?","What is the capital of Uganda?", "What is 38^7-100 ?"]
-answersArray=[["A: Gordon Ramsey","B: Donald J. Trump","C: Leonardo DiCaprio","D: Rick Astley"],["A: 1969","B: 2016","C: 2006","D: 2005"],["A: Helsinki","B: New York","C: San Francisco","D: Miami"],["A: Freetown","B: Nairobi","C: Kigali","D: Kampala"],["A: 215526793728","B: 114415582492","C: 114415582491","D: 114415586492"]]
+answersArray=[["A: Gordon Ramsey","B: Donald J. Trump","C: Leonardo DiCaprio","D: Rick Astley"],["A: 2006","B: 2016","C: 1969","D: 2005"],["A: Helsinki","B: San Francisco","C: New York","D: Miami"],["A: Freetown","B: Nairobi","C: Kigali","D: Kampala"],["A: 215526793728","B: 114415582492","C: 114415582491","D: 114415586492"]]
+answersNumber=["B","A","B","D","A"]
 print("Question Game")
+deck = list(range(1, 4))
+random.shuffle(deck)
 while questionCount != 3:
      questionCount += 1
-     questionRandom=random.randint(1,3)
+     questionRandom=deck.pop()
      print(questionArray[questionRandom])
      print(answersArray[questionRandom])
-     answer=input("Enter your answer: ")
-     if answer in answersArray[questionRandom]:
+     answer=input("Enter your answer: ").upper()
+     if answer == answersNumber[questionRandom]:
          print("Correct!!")
+         correctCount += 1
+     else:
+         print("WRONG!")
+print("GAME OVER - 3 Questions Answered\nCorrect answers: " +str(correctCount) + "\nWrong answers: " + str(3 - correctCount))
