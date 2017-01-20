@@ -5,7 +5,7 @@ A quiz game comprising of random questions given to the player who competes with
 
 Two ways to create your Python game version of The Chase:
 
-1) Player and Chaser take it in turns to If the player reaches a finish line after a certain number of questions answered correctly, without being caught by the chaser, the player has won
+1) Player and Chaser take it in turns to play. If the player reaches a finish line after a certain number of questions answered correctly, without being caught by the chaser, the player has won
 At the start of the game, the player can chose to move a step closer to or further from the chaser of remain 3 spaces in front depending on the size of the prize money they wish to play for; more money the closer the player starts to the chaser.
 2) Player goes first to answer as many questions as they can in a time limit. The chaser then takes a turn to answer the same number of questions as the player in a time limit. As a bonus, the player can start 3 places (equivalent to 3 correct answers) ahead of the chaser. If the chaser fails to answer the same number of questions as the player within the time limit, the player has won.
 
@@ -21,26 +21,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import random
 
-print("_______ _    _ ______    _____ _    _           _____ ______ ")
-
-print("|__   __| |  | |  ____|  / ____| |  | |   /\    / ____|  ____|")
-
-print("  | |  | |__| | |__    | |    | |__| |  /  \  | (___ | |__   ")
-
-print("  | |  |  __  |  __|   | |    |  __  | / /\ \  \___ \|  __|  ")
-
-print("  | |  | |  | | |____  | |____| |  | |/ ____ \ ____) | |____ ")
-
-print("  |_|  |_|  |_|______|  \_____|_|  |_/_/    \_\_____/|______|")
-print("")
-class Player():
-    def __init__(self):
-        self._steps = 0
-        self._money=0
-class Chaser():
-    def __init__(self):
-        self._steps = 0
-        self._money = 0
-
-Chaser._steps = 4
-print(Chaser._steps)
+print("THE CHASE")
+PLAYER_STEPS=0
+CHASER_STEPS=0
+PLAYER_CASH=0
+CHASER_CASH=0
+questionArray =["Who is/was the President of the United States of America during 2017 - 2025?","In what year was YouTube founded?","Where was the first iPhone unveiled?","What is the capital of Uganda?", "What is 38^7-100 ?"]
+answersArray=[["A: Gordon Ramsey","B: Donald J. Trump","C: Leonardo DiCaprio","D: Rick Astley"],["A: 2006","B: 2016","C: 1969","D: 2005"],["A: Helsinki","B: San Francisco","C: New York","D: Miami"],["A: Freetown","B: Nairobi","C: Kigali","D: Kampala"],["A: 215526793728","B: 114415582492","C: 114415582491","D: 114415586492"]]
+answersNumber=["B","A","B","D","A"]
+deck = list(range(1, 4))
+random.shuffle(deck)
+while playerPlayed == False:
+    print("Player:")
+    questionRandom=deck.pop()
+    print(questionArray[questionRandom])
+    
