@@ -19,7 +19,7 @@ print("--------------")
 
 print("Player config:")
 player1_name=input("Player 1 name: ")
-player2_name=input("Player 1 name: ")
+player2_name=input("Player 2 name: ")
 while playerPlayed != 2:
     #player1_name plays:
     if(player1 > 0):
@@ -37,8 +37,8 @@ while playerPlayed != 2:
                 lastUsed=5
                 mwCount=mwCount+1
                 if(player1 < 1):
-                    print(player2_name: + "You have 0 lives, you lost.\n")
-                    print(player1_name: + "Won!\n")
+                    print(player2_name + ":" + "You have 0 lives, you lost.\n")
+                    print(player1_name + ":" + "Won!\n")
                     exit()
             else:
                 print("You have used all your Medium Sized Weapons.\n")
@@ -48,17 +48,17 @@ while playerPlayed != 2:
                 lastUsed=10
                 bwCount=bwCount+1
                 if(player1 < 1):
-                    print(player2_name: + "You have 0 lives, you lost.\n")
-                    print(player1_name: + "Won!\n")
+                    print(player2_name + ":" + "You have 0 lives, you lost.\n")
+                    print(player1_name + ":" + "Won!\n")
                     exit()
             else:
                 print("You have used all your Big Sized Weapons.\n")
 
 
-        print(player2_name:  + str(player2) + " points left!\n")
+        print(player2_name+ str(player2) + " points left!\n")
     else:
-        print(player2_name: +"You have 0 lives, you lost.\n")
-        print(player1_name: + "Won!\n")
+        print(player2_name +"You have 0 lives, you lost.\n")
+        print(player1_name + ":" + "Won!\n")
         exit()
 
     if(player2 > 0):
@@ -76,8 +76,8 @@ while playerPlayed != 2:
                 lastUsedTwo=5
                 mwCountTwo=mwCountTwo+1
                 if(player2 < 1):
-                    print("player1_name: You have 0 lives, you lost.\n")
-                    print("player2_name: Won!\n")
+                    print(player1_name + "You have 0 lives, you lost.\n")
+                    print(player2_name + "Won!\n")
                     exit()
             else:
                 print("You have used all your Medium Sized Weapons.\n")
@@ -87,15 +87,15 @@ while playerPlayed != 2:
                 lastUsedTwo=10
                 bwCountTwo=bwCountTwo+1
                 if(player2 < 1):
-                    print("player1_name: You have 0 lives, you lost.\n")
-                    print("player2_name: Won!\n")
+                    print(player1_name + "You have 0 lives, you lost.\n")
+                    print(player2_name + "Won!\n")
                     exit()
             else:
                 print("You have used all your Big Sized Weapons.\n")
 
 
-        print("player1_name: " + str(player1) + " points left!\n")
+        print(player1_name + str(player1) + " points left!\n")
     else:
-        print("player2_name: You have 0 lives, you lost.\n")
-        print("player1_name: Won!\n")
+        print(player2_name + " You have 0 lives, you lost.\n")
+        print(player1_name + "Won!\n")
         exit()
