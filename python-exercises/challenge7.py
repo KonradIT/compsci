@@ -26,7 +26,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # [ ] add timer
 
 import random
-
+import sys
 print("THE CHASE")
 PLAYER_STEPS=0
 CHASER_STEPS=0
@@ -37,11 +37,30 @@ answersArray=[["A: Gordon Ramsey","B: Donald J. Trump","C: Leonardo DiCaprio","D
 answersNumber=["B","A","B","D","A"]
 deck = list(range(1, 4))
 random.shuffle(deck)
+playerPlayed=False
 while playerPlayed == False:
     print("Player:")
     questionRandom=deck.pop()
     print(questionArray[questionRandom])
+    print(answersArray[questionRandom])
     playerAnswer=input("Enter your Answer: ").upper()
-    if(playerAnswer==answerNumber[questionRandom]):
+    if(playerAnswer==answersNumber[questionRandom]):
         PLAYER_STEPS += 1
-        print("Congratulations! You moved 1 step, you're " + PLAYER_STEPS - CHASER_STEPS + " steps away from the chaser.")
+        print("Congratulations! You moved 1 step, you're " + str(PLAYER_STEPS - CHASER_STEPS) + " steps away from the chaser.")
+        playerPlayed=True
+    else:
+        print("WRONG!!!")
+        playerPlayed=True
+while playerPlayed == True:
+    print("Chaser:")
+    questionRandom=deck.pop()
+    print(questionArray[questionRandom])
+    print(answersArray[questionRandom])
+    chaserAnswer=input("Enter your Answer: ").upper()
+    if(chaserAnswer==answersNumber[questionRandom]):
+        CHASER_STEPS += 1
+        if PLAYER_STEPS <= CHASER_STEPS:
+            print("PLAYER YOU LOST!!!!")
+            sys.exit(0)
+        print("Catching up! Player beware, the chaser is just " + str(PLAYER_STEPS - CHASER_STEPS) + " steps shy!")
+        playerPlayed=False
