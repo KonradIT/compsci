@@ -24,7 +24,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # [ ] Add big text
 # [ ] add fonts
 # [ ] add timer
-
+# [ ] moves closer 2 chaser more $$$, moves away, no $$$
 import random
 import sys
 print("THE CHASE")
