@@ -28,7 +28,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 import random
 import sys
 import os
-print("THE CHASE")
+import threading
+global msvcrt
+import msvcrt
 print(" _______ _    _ ______    _____ _    _           _____ ______ ")
 print("|__   __| |  | |  ____|  / ____| |  | |   /\    / ____|  ____|")
 print("   | |  | |__| | |__    | |    | |__| |  /  \  | (___ | |__   ")
@@ -45,6 +47,38 @@ answersNumber=["B","A","B","D","A"]
 deck = list(range(1, 4))
 random.shuffle(deck)
 playerPlayed=False
+
+def readInput(caption, default, timeout = 5):
+    class KeyboardThread(threading.Thread):
+        def run(self):
+            self.timedout = False
+            self.input = ''
+            while True:
+                if msvcrt.kbhit():
+                    chr = msvcrt.getche()
+                    if ord(chr) == 13:
+                        break
+                    elif ord(chr) >= 32:
+                        self.input += str(chr)
+                if len(self.input) == 0 and self.timedout:
+                    break
+
+
+    sys.stdout.write('%s(%s):'%(caption, default));
+    result = default
+    it = KeyboardThread()
+    it.start()
+    it.join(timeout)
+    it.timedout = True
+    if len(it.input) > 0:
+        # wait for rest of input
+        it.join()
+        result = it.input
+    print('')  # needed to move to next line
+    return result
+print("Player, would you like to move 3 steps away from the chaser BUT win less money?")
+if(input("Choose: Y/N ").upper() == "Y"):
+    #moves 3 steps
 while playerPlayed == False:
     os.system('color 3')
     print("Player:")
