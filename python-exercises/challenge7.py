@@ -27,7 +27,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # [ ] moves closer 2 chaser more $$$, moves away, no $$$
 import random
 import sys
+import os
 print("THE CHASE")
+print(" _______ _    _ ______    _____ _    _           _____ ______ ")
+print("|__   __| |  | |  ____|  / ____| |  | |   /\    / ____|  ____|")
+print("   | |  | |__| | |__    | |    | |__| |  /  \  | (___ | |__   ")
+print("   | |  |  __  |  __|   | |    |  __  | / /\ \  \___ \|  __|  ")
+print("   | |  | |  | | |____  | |____| |  | |/ ____ \ ____) | |____ ")
+print("   |_|  |_|  |_|______|  \_____|_|  |_/_/    \_\_____/|______|")
 PLAYER_STEPS=0
 CHASER_STEPS=0
 PLAYER_CASH=0
@@ -39,6 +46,7 @@ deck = list(range(1, 4))
 random.shuffle(deck)
 playerPlayed=False
 while playerPlayed == False:
+    os.system('color 3')
     print("Player:")
     questionRandom=deck.pop()
     print(questionArray[questionRandom])
@@ -52,6 +60,7 @@ while playerPlayed == False:
         print("WRONG!!!")
         playerPlayed=True
 while playerPlayed == True:
+    os.system('color 6')
     print("Chaser:")
     questionRandom=deck.pop()
     print(questionArray[questionRandom])
@@ -60,6 +69,7 @@ while playerPlayed == True:
     if(chaserAnswer==answersNumber[questionRandom]):
         CHASER_STEPS += 1
         if PLAYER_STEPS <= CHASER_STEPS:
+            os.system('color 4')
             print("PLAYER YOU LOST!!!!")
             sys.exit(0)
         print("Catching up! Player beware, the chaser is just " + str(PLAYER_STEPS - CHASER_STEPS) + " steps shy!")
