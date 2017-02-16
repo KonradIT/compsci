@@ -245,31 +245,27 @@ def start():
 	for i in TRAVEL_YEARS:
 		print("           " + str(count+1) + " - " + str(TRAVEL_YEARS[count]))
 		count += 1
-	print("           7 - Set speed")
-	print("           8 - Exit")
+	print("           7 - Exit")
 	CHOSEN_YEAR = int(input("           Year: ")) - 1
-	if (CHOSEN_YEAR == 6):
+	def setSpeed():
+                while switch (input("           Enter speed [quick/medium/slow]: ")):
+                        if case ("quick"):
+                                return 0.3
+                                print("quick")
+                                start()
+                                break
+                        if case ("medium"):
+                                return 0.5
+                                print("medium")
+                                start()
+                                break
+                        if case ("slow"):
+                                return 1.5
+                                print("slow")
+                                start()
+                                break
+	if (CHOSEN_YEAR == 7):
 		print("           Set speed:")
-        def setSpeed:
-		while switch (input("           Enter speed [quick/medium/slow]: ")):
-			if case ("quick"):
-				return 0.3
-				print("quick")
-				start()
-				break
-			if case ("medium"):
-				return 0.5
-				print("medium")
-				start()
-				break
-			if case ("slow"):
-				return 1.5
-				print("slow")
-				start()
-				break
 	else :
-	  if (CHOSEN_YEAR == 7):
-	    quit()
-	  else :
-	    travel_to(TRAVEL_YEARS[CHOSEN_YEAR],0.3)
+	  travel_to(TRAVEL_YEARS[CHOSEN_YEAR],setSpeed())
 start()
