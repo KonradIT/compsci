@@ -2,6 +2,7 @@ import time
 import random
 import datetime
 import os
+speedV=0
 class switch(object):
     value = None
     def __new__(class_, value):
@@ -11,58 +12,58 @@ class switch(object):
 def case(*args):
     return any((arg == switch.value for arg in args))
 
-def travel_to(year):
+def travel_to(year,speed):
     time.sleep(1)
     while switch(year):
         if case(2016):
             print ("           TRAVELLING TO " + str(year) + "!")
             print("           =-")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           ==-")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           ===-")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           ====-")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           =====-")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           ======-")
             time.sleep(5)
             break
         if case(2018):
             print ("           TRAVELLING TO " + str(year) + "!")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           S")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           SC")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           SCI")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           SCIE")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           SCIEN")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           SCIENC")
-            time.sleep(0.5)
+            time.sleep(speed)
             print("           SCIENCE ABOLISHED")
             time.sleep(5)
             break
         if case(2024):
             print("           TRAVELLING TO " + str(year) + "!")
             print("           |||||||||||||||||||\n           |||||||||||||||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           |||||||||||||||||\n           |||||||||||||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           |||||||||||||||\n           |||||||||||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           |||||||||||||\n           |||||||||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           |||||||||||\n           |||||||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           |||||||||\n           |||||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           |||||||\n           |||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           |||||\n           |||||")
             print("           Donald Trump's wall is destroyed!")
             time.sleep(5)
@@ -70,27 +71,27 @@ def travel_to(year):
         if case(2100):
             print("           TRAVELLING TO " + str(year) + "!")
             print("           /////           |||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           /////         |||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           /////       |||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           /////     |||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           /////   |||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           ///// |||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           /////|||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           ////X||||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           ///XX|||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           //XXX||||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           /XXXX|||")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           England Collides With France")
             time.sleep(5)
             break
@@ -98,28 +99,28 @@ def travel_to(year):
             print("           TRAVELLING TO " + str(year) + "!")
             print("            		     _____|||____")
             print("           ________          \[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("            	            _____|||____")
             print("           ________         \[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("                          _____|||____")
             print("           ________       \[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("                        _____|||____")
             print("           ________     \[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("                      _____|||____")
             print("           ________   \[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("                    _____|||____")
             print("           ________ \[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("                  _____|||____")
             print("           _______\[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           	_____|||____")
             print("           _____\[][][][][]/")
-            time.sleep(0.3)
+            time.sleep(speed)
             print("           America conquered.")
             time.sleep(5)
             break
@@ -131,7 +132,7 @@ def travel_to(year):
             print ("           ( MOON  )      -===")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -139,7 +140,7 @@ def travel_to(year):
             print ("           ( MOON  )     -=== ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -147,7 +148,7 @@ def travel_to(year):
             print ("           ( MOON  )    -===  ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -155,7 +156,7 @@ def travel_to(year):
             print ("           ( MOON  )   -===   ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -163,7 +164,7 @@ def travel_to(year):
             print ("           ( MOON  )  -===    ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -171,7 +172,7 @@ def travel_to(year):
             print ("           ( MOON  ) -===     ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----     *      ")
@@ -179,7 +180,7 @@ def travel_to(year):
             print ("           ( MOON  )  ||      ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -187,7 +188,7 @@ def travel_to(year):
             print ("           ( MOON  )  ===-    ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -195,7 +196,7 @@ def travel_to(year):
             print ("           ( MOON  ) ===-     ")
             print ("            \     /           ")
             print ("             -----            ")
-            time.sleep(0.8)
+            time.sleep(speed)
             os.system('cls' if os.name == 'nt' else 'clear')
             print ("           TRAVELLING TO " + str(year) + "!")
             print ("             -----            ")
@@ -211,6 +212,8 @@ def travel_to(year):
     os.system('cls' if os.name == 'nt' else 'clear')
     start()
 def start():
+
+	os.system('cls' if os.name == 'nt' else 'clear')
 	print("""\
              __---~~~~--__                      __--~~~~---__
             `\---~~~~~~~~\\                    //~~~~~~~~---/'
@@ -242,10 +245,31 @@ def start():
 	for i in TRAVEL_YEARS:
 		print("           " + str(count+1) + " - " + str(TRAVEL_YEARS[count]))
 		count += 1
-	print("           7 - Exit")
-	CHOSEN_YEAR=int(input("           Year: ")) - 1
-	if(CHOSEN_YEAR == 6):
+	print("           7 - Set speed")
+	print("           8 - Exit")
+	CHOSEN_YEAR = int(input("           Year: ")) - 1
+	if (CHOSEN_YEAR == 6):
+		print("           Set speed:")
+        def setSpeed:
+		while switch (input("           Enter speed [quick/medium/slow]: ")):
+			if case ("quick"):
+				return 0.3
+				print("quick")
+				start()
+				break
+			if case ("medium"):
+				return 0.5
+				print("medium")
+				start()
+				break
+			if case ("slow"):
+				return 1.5
+				print("slow")
+				start()
+				break
+	else :
+	  if (CHOSEN_YEAR == 7):
 	    quit()
-	else:
-	    travel_to(TRAVEL_YEARS[CHOSEN_YEAR])
+	  else :
+	    travel_to(TRAVEL_YEARS[CHOSEN_YEAR],0.3)
 start()
