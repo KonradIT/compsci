@@ -9,7 +9,7 @@ class Game():
     def battle(self):
         print("    BATTLE!")
         print("    Attack your opponent")
-        print("    " + str("shot" if random.randint(0,5) % 2 == 0 else "not shot"))
+        print("    " + str("shot" if random.randint(0,21) % 2 == 0 else "not shot"))
     def build(self):
         print("    BUILD!")
     def print_screen(self, player):
