@@ -1,5 +1,5 @@
 ###Battle soldiers game:
-
+import random, time
 PLAYER_1_MONEY=10
 PLAYER_2_MONEY=10
 CURRENT_PLAYER=1
@@ -8,6 +8,8 @@ class Game():
         self._money=0
     def battle(self):
         print("    BATTLE!")
+        print("    Attack your opponent")
+        print("    " + str("shot" if random.randint(0,5) % 2 == 0 else "not shot"))
     def build(self):
         print("    BUILD!")
     def print_screen(self, player):
