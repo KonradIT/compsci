@@ -1,5 +1,13 @@
 ###Battle soldiers game:
 import random, time, os, sys
+
+###############################
+# TODO:                       #
+# - Fix money counter issue   #
+# - Add jet plane             #
+# - Add nuclear generators    #
+###############################
+
 class Game():
     def __init__(self):
         self.PLAYERS_MONEY=[10, 10]
@@ -39,31 +47,31 @@ class Game():
         print("    BUILD!")
 
         print("    >>>What would you like to buy?\n    >>>Your current amount of money in USD: " + str(self.PLAYERS_MONEY[self.CURRENT_PLAYER]))
-        print("    - A: House\n    - B: Shed\n    - C: 15 rounds of Ammo")
+        print("    - A: House               - [30 USD]\n    - B: Shed                - [40 USD]\n    - C: 15 rounds of Ammo   - [30 USD]")
         option = input("    >>>Enter: ").upper()
         if option == "A":
             cost = 30
-            if(self.PLAYERS_MONEY[self.CURRENT_PLAYER] - cost < - 0):
+            if(self.PLAYERS_MONEY[self.CURRENT_PLAYER] - 30 < - 0):
                 print("    >>>Unable to buy")
             else:
                 print("    >>>Enjoy your new house")
-                self.PLAYERS_MONEY[self.CURRENT_PLAYER] =- cost
+                self.PLAYERS_MONEY[self.CURRENT_PLAYER] =- 30
                 print("    >>>You have ", self.PLAYERS_MONEY[self.CURRENT_PLAYER], " left in budget")
         elif option == "B":
             cost = 40
-            if(self.PLAYERS_MONEY[self.CURRENT_PLAYER] - cost < - 0):
+            if(self.PLAYERS_MONEY[self.CURRENT_PLAYER] - 40 < - 0):
                 print("    >>>Unable to buy")
             else:
                 print("    >>>Enjoy your new shed")
-                self.PLAYERS_MONEY[self.CURRENT_PLAYER] -= cost
+                self.PLAYERS_MONEY[self.CURRENT_PLAYER] -= 40
                 print("    >>>You have ", self.PLAYERS_MONEY[self.CURRENT_PLAYER], " left in budget")
         else:
             cost = 30
-            if(self.PLAYERS_MONEY[self.CURRENT_PLAYER] - cost < - 0):
+            if(self.PLAYERS_MONEY[self.CURRENT_PLAYER] - 30 < - 0):
                 print("    >>>Unable to buy")
             else:
                 print("    >>>You have 15 more rounds of Ammo, each round contains 5 bullets.\n    === 75 bullets.")
-                self.PLAYERS_MONEY[self.CURRENT_PLAYER] -= cost
+                self.PLAYERS_MONEY[self.CURRENT_PLAYER] -= 30
                 print("    >>>You have ", self.PLAYERS_MONEY[self.CURRENT_PLAYER], " left in budget")
         time.sleep(5)
         os.system('cls')
