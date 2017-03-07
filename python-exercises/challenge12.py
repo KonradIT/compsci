@@ -20,7 +20,7 @@ with open(SAVED_GAME_JSON, "w") as f:
               print("Team " + str(i+1))
               TEAMS.insert(i, input("Enter teamname: "))
               f.write("\n\t\""+TEAMS[i]+"\",")
-              
+
     print(TEAMS)
-              
+
     #for i in range(len(TEAMS)):
