@@ -1,4 +1,4 @@
-withdrawal = int(input("Money to withdraw)"))
+withdrawal = int(input("Money to withdraw: "))
 if withdrawal % 10 == 0:
   Fifties = withdrawal // 50
   print (str(Fifties) + " $50 notes")
