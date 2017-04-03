@@ -1,7 +1,7 @@
 import sys
 print("	CASH MACHINE")
 amt_to_withdraw = 0
-if not str(sys.argv[1]) == "":
+if len(sys.argv) > 1:
       amt_to_withdraw=int(sys.argv[1])
 else:
       amt_to_withdraw = int(input("Money to withdraw: "))
