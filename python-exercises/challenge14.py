@@ -14,6 +14,10 @@ def display_board():
 		print("Game over!\nThe Dark Knight ALWAYS rises!")
 		game_over=True
 		exit()
+	if player_data("Player") == [0,0]:
+		print("PLAYER WON!\nLooks like the Dark Knight is not so good after all...")
+		game_over=True
+		exit()
 	for col in board:
 		print(str(col).replace(',', ''))
 
