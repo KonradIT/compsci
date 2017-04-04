@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+#license: https://www.gnu.org/licenses/agpl-3.0.en.html
 import random
 board = []
 pl = ['Player', 'Knight']
