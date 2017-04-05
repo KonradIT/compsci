@@ -15,12 +15,12 @@ def display_board():
 		print("=====================================")
 		print("== Game over! ==\n== The Dark Knight ALWAYS rises! ==")
 		print("=====================================")
-		os.system('color 07')
+		set_term_color("End")
 		game_over=True
 		exit()
 	if player_data("Player") == [0,0]:
 		print("PLAYER WON!\nLooks like the Dark Knight is not so good after all...")
-		os.system('color 07')
+		set_term_color("End")
 		game_over=True
 		exit()
 	for col in board:
@@ -53,7 +53,7 @@ def no_trail(trail):
 
 def get_possible_moves(w):
 	message=" "
-	
+
 	if w == "Player":
 		if vh_player_data[p2i(w)] == "":
 			message="UP/"
@@ -86,15 +86,20 @@ def get_possible_moves(w):
 
 def set_term_color(participant):
 	if participant == "Knight":
-		os.system('color 04')
+		if os.name == "nt":
+			os.system('color 04')
 	if participant == "Player":
-		os.system('color 06')
+		if os.name == "nt":
+			os.system('color 06')
+	if participant == "End":
+		if os.name == "nt":
+			os.system('color 07')
 
 def log2file(participant, move, coordinates):
 	if log_f == True:
 		file = open('gameplay.log', 'a')
 		file.write('>>'+ participant +" - " + move + " = " + str(coordinates) + '\n')
-		file.close() 
+		file.close()
 #initial setup for dark knight:
 set_finish_beacon([0,0])
 
@@ -105,46 +110,27 @@ player_data("Knight",[0,1])
 set_player_data("Knight")
 display_board()
 
+def set_move(text, direction, i, participant, pos):
+	print(">> " + text)
+	log2file(i, participant, [pos[0], pos[1]])
+	vh_player_data[p2i(i)] = direction
+	no_trail(i)
+	print(player_data(i)[0])
+	print(player_data(i)[1])
+	player_data(i,[pos[0],pos[1]])
+	set_player_data(i)
 while game_over == False:
     for i in pl:
         set_term_color(i)
         participant = input(">> " + i + ': Enter your move [' + get_possible_moves(i) + ']: ').upper()
         if participant == 'U':
-            print(">> UP")
-            log2file(i, participant, [player_data(i)[0]-1, player_data(i)[1]])
-            vh_player_data[p2i(i)] = "v"
-            no_trail(i)
-            print(player_data(i)[0])
-            print(player_data(i)[1])
-            player_data(i,[player_data(i)[0]-1 , player_data(i)[1]])
-            set_player_data(i)
+            set_move("UP", "v", i, participant, [player_data(i)[0]-1 , player_data(i)[1]])
         elif participant == 'D':
-            print(">> DOWN")
-            log2file(i, participant, [player_data(i)[0]+1, player_data(i)[1]])
-            vh_player_data[p2i(i)] = "v"
-            no_trail(i)
-            print(player_data(i)[0])
-            print(player_data(i)[1])
-            player_data(i,[player_data(i)[0]+1 , player_data(i)[1]])
-            set_player_data(i)
+            set_move("DOWN", "v", i, participant, [player_data(i)[0]+1 , player_data(i)[1]])
         elif participant == 'L':
-            print(">> LEFT")
-            log2file(i, participant, [player_data(i)[0], player_data(i)[1]-1])
-            vh_player_data[p2i(i)] = "h"
-            no_trail(i)
-            print(player_data(i)[0])
-            print(player_data(i)[1])
-            player_data(i,[player_data(i)[0] , player_data(i)[1]-1])
-            set_player_data(i)
+            set_move("LEFT", "h", i, participant, [player_data(i)[0], player_data(i)[1]-1])
         elif participant == 'R':
-            print(">> RIGHT")
-            log2file(i, participant, [player_data(i)[0]-1, player_data(i)[1]+1])
-            vh_player_data[p2i(i)] = "h"
-            no_trail(i)
-            print(player_data(i)[0])
-            print(player_data(i)[1])
-            player_data(i,[player_data(i)[0] , player_data(i)[1]+1])
-            set_player_data(i)
+            set_move("RIGHT", "h", i, participant, [player_data(i)[0], player_data(i)[1]+1])
         elif participant == 'Q':
             exit()
         display_board()
