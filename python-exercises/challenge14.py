@@ -1,21 +1,26 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #license: https://www.gnu.org/licenses/agpl-3.0.en.html
-import random
+import random, os
 board = []
 pl = ['Player', 'Knight']
 game_over = False
 v_player_data = [[], []] #First array: coordinates
 vh_player_data = ["",""]
+log_f=True
 for i in range(5):
 	board.append([' ', ' ', ' ', ' ',' '])
 def display_board():
 	if player_data("Knight") == player_data("Player"):
-		print("Game over!\nThe Dark Knight ALWAYS rises!")
+		print("=====================================")
+		print("== Game over! ==\n== The Dark Knight ALWAYS rises! ==")
+		print("=====================================")
+		os.system('color 07')
 		game_over=True
 		exit()
 	if player_data("Player") == [0,0]:
 		print("PLAYER WON!\nLooks like the Dark Knight is not so good after all...")
+		os.system('color 07')
 		game_over=True
 		exit()
 	for col in board:
@@ -41,16 +46,34 @@ def set_player_data(participant):
 		pl_char = "K"
 	board[player_data(participant)[0]][player_data(participant)[1]] = pl_char
 
+def set_finish_beacon(pos):
+	board[pos[0]][pos[1]] = "Z"
 def no_trail(trail):
 	board[player_data(trail)[0]][player_data(trail)[1]] = " "
 
 def get_possible_moves(w):
 	message=" "
+	
 	if w == "Player":
 		if vh_player_data[p2i(w)] == "":
-			message="LEFT/RIGHT/UP/"
+			message="UP/"
+			if player_data(w)[1] == 0:
+				#Edges
+				message = message + "RIGHT/"
+			elif player_data(w)[1] == 4:
+				#Edges
+				message = message + "LEFT/"
+			else:
+				message = message + "LEFT/RIGHT"
 		if vh_player_data[p2i(w)] == "v":
-			message = message + "LEFT/RIGHT/"
+			if player_data(w)[1] == 0:
+				#Edges
+				message = message + "RIGHT/"
+			elif player_data(w)[1] == 4:
+				#Edges
+				message = message + "LEFT/"
+			else:
+				message = message + "LEFT/RIGHT"
 		if vh_player_data[p2i(w)] == "h":
 			message = message + "UP/"
 			if not player_data(w)[0] == 4:
@@ -61,20 +84,34 @@ def get_possible_moves(w):
 		message="LEFT/RIGHT/UP/DOWN"
 	return message
 
+def set_term_color(participant):
+	if participant == "Knight":
+		os.system('color 04')
+	if participant == "Player":
+		os.system('color 06')
+
+def log2file(participant, move, coordinates):
+	if log_f == True:
+		file = open('gameplay.log', 'a')
+		file.write('>>'+ participant +" - " + move + " = " + str(coordinates) + '\n')
+		file.close() 
 #initial setup for dark knight:
-player_data("Knight",[0,0])
-set_player_data("Knight")
+set_finish_beacon([0,0])
 
 player_data("Player",[4,4])
 set_player_data("Player")
 
+player_data("Knight",[0,1])
+set_player_data("Knight")
 display_board()
 
 while game_over == False:
     for i in pl:
+        set_term_color(i)
         participant = input(">> " + i + ': Enter your move [' + get_possible_moves(i) + ']: ').upper()
         if participant == 'U':
             print(">> UP")
+            log2file(i, participant, [player_data(i)[0]-1, player_data(i)[1]])
             vh_player_data[p2i(i)] = "v"
             no_trail(i)
             print(player_data(i)[0])
@@ -83,6 +120,7 @@ while game_over == False:
             set_player_data(i)
         elif participant == 'D':
             print(">> DOWN")
+            log2file(i, participant, [player_data(i)[0]+1, player_data(i)[1]])
             vh_player_data[p2i(i)] = "v"
             no_trail(i)
             print(player_data(i)[0])
@@ -91,6 +129,7 @@ while game_over == False:
             set_player_data(i)
         elif participant == 'L':
             print(">> LEFT")
+            log2file(i, participant, [player_data(i)[0], player_data(i)[1]-1])
             vh_player_data[p2i(i)] = "h"
             no_trail(i)
             print(player_data(i)[0])
@@ -99,6 +138,7 @@ while game_over == False:
             set_player_data(i)
         elif participant == 'R':
             print(">> RIGHT")
+            log2file(i, participant, [player_data(i)[0]-1, player_data(i)[1]+1])
             vh_player_data[p2i(i)] = "h"
             no_trail(i)
             print(player_data(i)[0])
