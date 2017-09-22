@@ -1,5 +1,3 @@
-
-
 def one():
 	l = lambda x,y : x==y
 	if l(input("word1: "),input("word2: ")):
@@ -37,11 +35,12 @@ def five():
 	  def __init__(self,name, other):
 	    self.name = name
 	    self.other = other
-	    
+	  def talk(self,personA,personB):
+	    print("Hi {}\nIm {}".format(personA.name.upper(),personB.name.upper()))
 	nestor = Human("Nestor","Bloomfield")
 	bloomfield = Human("Bloomfield","Nestor")
-	print("Hi {0.other}\nIm {0.name}".format(nestor))
-	print("Hi {0.other}\nIm {0.name}".format(bloomfield))
+	nestor.talk(nestor, bloomfield)
+	bloomfield.talk(bloomfield, nestor)
 
 print("five()")
 five()
