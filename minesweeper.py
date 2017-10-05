@@ -1,3 +1,7 @@
+### IN CASE OF LEAKS ###
+### LICENSE: https://www.gnu.org/licenses/agpl-3.0.txt ###
+
+
 import random
 import time
 import subprocess
