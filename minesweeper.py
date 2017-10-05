@@ -108,8 +108,10 @@ class MineSweeper:
 				print(str(index+1) + "  " + str(i).replace(",","").replace("[","").replace("]","").replace("\'","").replace(" ", "  "))
 			else:
 				print(str(index+1) + " " + str(i).replace(",","").replace("[","").replace("]","").replace("\'","").replace(" ", "  "))
+	def help(self):
+		print("{minesweeper}.print_board() - prints board.")
+		print("{minesweeper}.shoot() - shoots to square.")
 
-	
 	def select_dificulty(self):
 		print(" __  __ _  ")                                                 
 		print("|  \/  (_)_ __   ___  _____      _____  ___ _ __   ___ _ __ ")
@@ -118,10 +120,13 @@ class MineSweeper:
 		print("|_|  |_|_|_| |_|\___||___/ \_/\_/ \___|\___| .__/ \___|_|   ")
 		print("                                           |_|      ")
 
-		print("C H O O S E Y O U R D I F I C U L T Y L E V E L")
+		print("C H O O S E Y O U R D I F F I C U L T Y L E V E L")
 		print("\t[ ] 1 - Easy (8x8)\n\t[ ] 2 - Medium (16x16)")
 		choice=int(input("\t>>> "))
 		if choice == 1:
+			print("run {minesweeper}.help() to get help.")
 			self.start_game(8,8)
 		if choice == 2:
+			print("run {minesweeper}.help() to get help.")
 			self.start_game(16,16)
+
