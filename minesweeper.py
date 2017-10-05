@@ -63,9 +63,9 @@ class MineSweeper:
 			for i in range(2):
 				print(i)
 				i = i + 1
-				if shoot_w == 7:
+				if shoot_w+1 == self.__w:
 					i = 0
-				if shoot_h == 7:
+				if shoot_h+1 == self.__h:
 					i = 0
 				if self.__Board[shoot_w][shoot_h-i] == ".":
 					#print("debug")
