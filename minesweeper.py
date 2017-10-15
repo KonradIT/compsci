@@ -133,4 +133,3 @@ class MineSweeper:
 		if choice == 2:
 			print("run {minesweeper}.help() to get help.")
 			self.start_game(16,16)
-
