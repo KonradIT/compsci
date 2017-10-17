@@ -8,7 +8,7 @@ class TimeMachine:
     self.GameLost = False
     self.Points = 0
     self.Definitions = [
-      ["What is\"2+2-1\"?","3"],
+      ["What is \"2+2-1\"?","3"],
       ["When did Donald Trump win the Presidential Race?","2016"],
       ["What is 9 + 10?","19"],
       ["What is the square root of 49?","7"],
@@ -24,6 +24,7 @@ class TimeMachine:
     ]
     self.ChosenAnswers=[]
     self.Choice=""
+    self.Attempts=4
   def flux_capacitor(self):
     empty=0    
     for i in self.items:
@@ -42,39 +43,40 @@ class TimeMachine:
         exit()
     choice=input("\t\t>>> Enter: ")
     self.answer(choice)
-  def answer(self, choice, Attempts=4, Answer=""):
+  def answer(self, choice, question=1000):
     i=random.randint(0,10)
     self.Choice=choice
-    if Answer != "":
-        attempts=Attempts
-        ans=Answer
-        if attempts == 0:
-            print("\t\t!!! The artifact thief escaped. Try again next time.")
-        else:
+    if self.Attempts == 0:
+        print("\t\t!!! The artifact thief escaped. Try again next time.")
+    else:
+        if question != 1000:
+            ans=self.Definitions[question][0]
+            i=question
             print("\n\t\t"+ans)
-            print("\t\t>>> Attempts: " + str(attempts))
+            print("\t\t>>> Attempts: " + str(self.Attempts))
             answer=input("\t\t>>> Answer: ").lower()
-            if answer == self.Definitions[i][1].lower():
+            if answer == self.Definitions[question][1].lower():
                 self.items[int(choice)-1][2] = "X"
                 self.ChosenAnswers.append(self.Definitions[i][0])
+                self.Attempts=4
             else:
-                attempts -= 1
-                self.answer(self.Choice, attempts, ans)
-    elif self.Definitions[i][0] not in self.ChosenAnswers:
-        attempts=Attempts
-        if attempts == 0:
-                print("The artifact thief escaped. Try again next time.")
+                self.Attempts -= 1
+                self.answer(self.Choice, i)
         else:
-            ans = self.Definitions[i][0]
-            print("\n\t\t" + self.Definitions[i][0])
-            print("\t\t>>>Attempts: " + str(attempts))
+            if self.Definitions[i][0] not in self.ChosenAnswers:
+                ans=self.Definitions[i][0]
+            else:
+                ans=self.Definitions[i+1][0]
+            print("\n\t\t"+ans)
+            print("\t\t>>> Attempts: " + str(self.Attempts))
             answer=input("\t\t>>> Answer: ").lower()
             if answer == self.Definitions[i][1].lower():
                 self.items[int(choice)-1][2] = "X"
                 self.ChosenAnswers.append(self.Definitions[i][0])
+                self.Attempts=4
             else:
-                attempts -= 1
-                self.answer(self.Choice, attempts, ans)
+                self.Attempts -= 1
+                self.answer(self.Choice, i)
   def item_status(self,item,status="None"):
     if item <= len(self.items):
       if status == "None":
