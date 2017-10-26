@@ -46,7 +46,7 @@ pr = Product()
 rand= random.randint(1,5)
 while market.haswon == False:
 	if pr.Items[market.Points][1] != "WON":
-		print(rand)
+		#print(rand)
 		market.print_shelves()
 		print(pr.Items[market.Points][1])
 		c=int(input("Col: "))
