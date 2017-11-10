@@ -1,5 +1,3 @@
-import random
-import time
 
 class RamblingBuck:
 	def __init__(self):
@@ -23,14 +21,19 @@ class RamblingBuck:
 		self.battlefield[self.positions[indicator]][indicator] = " "
 		self.battlefield[self.positions[opponent]][opponent] = " "
 		self.battlefield[self.positions[opponent]+1][opponent] = str(opponent+1)
+		
 		self.positions[indicator] += 1
 		self.positions[opponent] += 1
+		
 		if self.battlefield[self.positions[indicator]][indicator] == "X":
+			self.battlefield[self.positions[indicator]][indicator] = " "
 			self.positions[indicator] = 0
 			self.battlefield[self.positions[indicator]+1][indicator] = " "
 			self.battlefield[self.positions[indicator]][indicator] = str(channel)
 		else:
-			self.battlefield[self.positions[indicator]+1][indicator] = "X"
+		  
+		  self.battlefield[self.positions[indicator]+1][indicator] = "X"
+		
 bucks = RamblingBuck()
 while bucks.lost == False:
 	bucks.printbattlefield()
