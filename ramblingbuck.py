@@ -8,6 +8,14 @@ class RamblingBuck:
 		self.battlefield[0][1] = "B"
 		self.positions=[0,0]
 		self.lost=False
+		print("  _____                 _     _ _               ____             _    ")
+		print(" |  __ \               | |   | (_)             |  _ \           | |   ")
+		print(" | |__) |__ _ _ __ ___ | |__ | |_ _ __   __ _  | |_) |_   _  ___| | __")
+		print(" |  _  // _` | '_ ` _ \| '_ \| | | '_ \ / _` | |  _ <| | | |/ __| |/ /")
+		print(" | | \ \ (_| | | | | | | |_) | | | | | | (_| | | |_) | |_| | (__|   < ")
+		print(" |_|  \_\__,_|_| |_| |_|_.__/|_|_|_| |_|\__, | |____/ \__,_|\___|_|\_\")
+		print("                                         __/ |                        ")
+		print("                                        |___/                         ")
 	def printbattlefield(self):
 		for i in self.battlefield:
 			print(str(i).replace("[","").replace("]","").replace(",",""))
