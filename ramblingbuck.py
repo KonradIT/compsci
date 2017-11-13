@@ -21,14 +21,21 @@ class RamblingBuck:
 		self.battlefield[self.positions[indicator]][indicator] = " "
 		self.battlefield[self.positions[opponent]][opponent] = " "
 		self.battlefield[self.positions[opponent]+1][opponent] = str(opponent+1)
-		
+		for i in self.positions:
+		  if i >= 3:
+		    print("You lost.")
+		    exit()		
 		self.positions[indicator] += 1
 		self.positions[opponent] += 1
-		
+
 		if self.battlefield[self.positions[indicator]][indicator] == "X":
+			if self.positions[indicator] > 5:
+			  self.positions[indicator] = 0
+			print("Test")
 			self.battlefield[self.positions[indicator]][indicator] = " "
-			self.positions[indicator] = 0
+			
 			self.battlefield[self.positions[indicator]+1][indicator] = " "
+			self.positions[indicator] = 0
 			self.battlefield[self.positions[indicator]][indicator] = str(channel)
 		else:
 		  
