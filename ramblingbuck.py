@@ -16,10 +16,7 @@ class RamblingBuck:
 		if self.shots == 10:
 			print("You won.")
 			exit()
-		for i in self.positions:
-		  if i >= 3:
-		    print("You lost.")
-		    exit()
+
 		indicator=0
 		opponent=0
 		if channel == 1:
