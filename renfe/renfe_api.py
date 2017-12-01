@@ -10,7 +10,7 @@ class Renfe:
 		self.nucleo = nucleo
 		self.origen = origen
 		self.destino = destino
-		self.url = 'http://horarios.renfe.com/cer/hjcer310.jsp?nucleo={}&i=i&cp=NO&o={}&d={}&df={}&ho=00&hd=26&TXTInfo='.format(nucleo,origen,destino,now.strftime("%Y%m%d"))  #Madrid, Alpedrete > Villalba: 10, 10200 12002
+		self.url = 'http://horarios.renfe.com/cer/hjcer310.jsp?nucleo={}&i=i&cp=NO&o={}&d={}&df={}&ho=00&hd=26&TXTInfo='.format(nucleo,origen,destino,now.strftime("%Y%m%d"))  
 		self.html_src = urllib.request.urlopen(self.url).read().decode('utf-8','ignore').encode("utf-8")
 		self.tabla_horarios=[]
 	def get_trains(self):
@@ -19,7 +19,7 @@ class Renfe:
 	def get_from_time(self, hour):
 		now = datetime.datetime.now()
 		self.url = 'http://horarios.renfe.com/cer/hjcer310.jsp?nucleo={}&i=i&cp=NO&o={}&d={}&df={}&ho={}&hd=26&TXTInfo='.format(self.nucleo,self.origen,self.destino,now.strftime("%Y%m%d"),hour)
-		self.html_src = urllib.request.urlopen(self.url).read()
+		self.html_src = urllib.request.urlopen(self.url).read().decode('utf-8','ignore').encode("utf-8")
 		return self.html_src
 		
 	def get_table(self, src):
@@ -32,9 +32,19 @@ class Renfe:
 		#Iteration to print a decent ascii table.
 		for index, line in enumerate(src.split('\n')):
 			if "<tr class" in line:
-				self.tabla_horarios.append([src.splitlines()[index+2], src.splitlines()[index+9].replace("<td align=center>","").replace("</td>","")])
-	
-		print(self.tabla_horarios)
-alpedrete_villalba = Renfe("10","10200","12002")
+				self.tabla_horarios.append([src.splitlines()[index+2].strip(), src.splitlines()[index+9].replace("<td align=center>","").replace("</td>","").strip(), src.splitlines()[index+10].replace("<td align=center>","").replace("</td>","").strip()])
+		print("|Linea|  Dep  |Arrival|")
+		for i in self.tabla_horarios:
+			
+			line = str(i).replace("[","| ").replace("]"," |").replace("\'","").replace(","," |")
+			print(line)
+			print("-"*len(line))
+		
+alpedrete_villalba = Renfe("10","10200","12002")# Madrid, Alpedrete > Villalba: 10, 10200 12002
+now = datetime.datetime.now()
 #print(alpedrete_villalba.get_trains())
-alpedrete_villalba.get_table(alpedrete_villalba.get_trains().decode("utf-8"))
+print("Renfe cercanias\nAlpedrete to Villalba")
+if input("Full table or starting from " + now.strftime("%H hour") + "?: [full/now]: ").lower() == "full":
+	alpedrete_villalba.get_table(alpedrete_villalba.get_trains().decode("utf-8"))
+else:
+	alpedrete_villalba.get_table(alpedrete_villalba.get_from_time(now.strftime("%H")).decode("utf-8"))
