@@ -1,16 +1,10 @@
 #API based on horarios app from Android. 
 
-"""
-TODO
-
-Fix remaining time till departure
-
-"""
-
 import urllib.request
 import datetime
 import re
 import time
+import sys
 class Renfe:
 	def __init__(self, nucleo, origen, destino):
 		now = datetime.datetime.now()
@@ -45,10 +39,20 @@ class Renfe:
 					if now.strftime("%H.%M") < departure:
 						pass
 					diff = total_time=(datetime.datetime.strptime(departure,'%H.%M') - datetime.datetime.strptime(now.strftime("%H.%M"),'%H.%M'))
-					self.tabla_horarios.append([src.splitlines()[index+2].strip(), departure + " - " + str(diff), src.splitlines()[index+10].replace("<td align=center>","").replace("</td>","").strip()])
+					if str(diff).startswith("0:0"):
+						remain=" NOW"
+					else:
+						remain=str(diff)[:-3]
+					now = datetime.datetime.now()
+					time=now.replace(hour=int(departure.split(".")[0]), minute=int(departure.split(".")[1]))
+					if now < time:
+						self.tabla_horarios.append([src.splitlines()[index+2].strip(), departure.replace(".",":") + " - " + remain, src.splitlines()[index+10].replace("<td align=center>","").replace("</td>","").strip()])
 				else:
 					self.tabla_horarios.append([src.splitlines()[index+2].strip(), src.splitlines()[index+9].replace("<td align=center>","").replace("</td>","").strip(), src.splitlines()[index+10].replace("<td align=center>","").replace("</td>","").strip()])
-		print("|Linea|  Dep  |Arrival|")
+		if remaining:
+			print("|Linea|  Departure   |Arrival|")
+		else:
+			print("|Linea|  Dep  |Arrival|")
 		for i in self.tabla_horarios:
 			
 			line = str(i).replace("[","| ").replace("]"," |").replace("\'","").replace(","," |")
@@ -67,7 +71,12 @@ alpedrete_villalba = Renfe("10","10200","12002")# Madrid, Alpedrete > Villalba: 
 now = datetime.datetime.now()
 #print(alpedrete_villalba.get_trains())
 print("Renfe cercanias\nAlpedrete to Villalba")
-if input("Full table or starting from " + now.strftime("%H hour") + "?: [full/now]: ").lower() == "full":
+choice=""
+if len(sys.argv) > 1:
+	choice=sys.argv[1]
+else:
+	input("Full table or starting from " + now.strftime("%H hour") + "?: [full/now]: ").lower()
+if choice == "full":
 	alpedrete_villalba.get_table(alpedrete_villalba.get_trains().decode("utf-8"))
 else:
 	alpedrete_villalba.get_table(alpedrete_villalba.get_from_time(now.strftime("%H")).decode("utf-8"), remaining=True)
