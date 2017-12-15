@@ -38,8 +38,13 @@ class CardGame:
 					"                         __/ |                    ",
 					"                        |___/                     "]
 		for index,i in enumerate(intro_text):
-			os.system("color 0" + str(index));
-			print(i)
+			if os.name == "nt":
+				os.system("color 0" + str(index));
+				print(i)
+			else:
+				index += 30
+				print('\033[{}m'.format(index))
+				print(i)
 			time.sleep(0.5)
 	def display_cards(self):
 		print("    1    2    3")
