@@ -10,26 +10,45 @@ class DealOrNoDeal:
 		self.money = random.sample( self.moneys, len(self.moneys) )
 		for index,i in enumerate(self.boxes):
 			i.append(self.money[index])
-		print("====== WELCOME TO DEAL|!DEAL ======\nInstructions: Attempt to guess the boxes with the least money so the final box has 250k. Bank will make an offer in order to pay less\nEnter a box for you to keep\n")
+		print("====== WELCOME TO DEAL||!DEAL ======\nInstructions: Attempt to guess the boxes with the least money so the final box has 250k. Bank will make an offer in order to pay less\nEnter a box for you to keep\n")
 		print("| ",end="")
 		for i in self.boxes:
 			print(i[0],end=" | ")
 		self.playerbox=int(input("\n>>> $ "))
 		self.lost = False
+		self.noshow_money=[]
+		self.noshow_box=[]
+		self.testarray=[]
 	def startGame(self):
-		if len(self.boxes) == 1:
-			self.lost = True
+
 		print("| ",end="")
 		for i in self.boxes:
-			print(i[0],end=" | ")
+			if i not in self.noshow_box:
+				print(i[0],end=" | ")
 		print("\nPrizes available:")
-		print(str(self.moneytodisplay).replace("[","").replace("]","").replace(",","$").replace("\'",""),end="$\n")
+		for y in self.noshow_money:
+			for index,j in enumerate(self.moneytodisplay):
+				if j == y:
+					self.moneytodisplay[index]="."
+		print(str(self.moneytodisplay).replace("[","").replace("]","").replace(",","$").replace("\'","").replace(".$ ",""),end="$\n")
 		print("OK Player, enter a box: ")
+		testarray=[]
+		print(len(testarray))
+		if "." in self.moneytodisplay:
+			testarray=self.moneytodisplay.remove(".")
 		box=int(input(">>> # "))
-		print("Box " + str(box+1) + " has " + self.boxes[box][1] + "$\n\n")
-		self.moneytodisplay.remove(str(self.boxes[box][1]))
-		del self.boxes[box]
-		
+		if len(self.moneytodisplay) == 1:
+			self.lost=True
+		if box == 22:
+			box -= 1
+		print("Box " + str(box) + " has " + self.boxes[box][1] + "$\n\n")
+		self.noshow_money.append(str(self.boxes[box][1]))
+		self.noshow_box.append(self.boxes[box-1])
+	def announce(self):
+		print("Your prize is: " + str(self.boxes))
 dond = DealOrNoDeal()
 while dond.lost == False:
 	dond.startGame()
+	if dond.lost == True:
+		dond.announce()
+		break
