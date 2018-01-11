@@ -1,4 +1,4 @@
-#Deal|!Deal game
+#Deal||!Deal game
 
 import random
 
@@ -19,33 +19,37 @@ class DealOrNoDeal:
 		self.noshow_money=[]
 		self.noshow_box=[]
 		self.testarray=[]
+		self.prize=0
 	def startGame(self):
 
 		print("| ",end="")
 		for i in self.boxes:
 			if i not in self.noshow_box:
 				print(i[0],end=" | ")
+				
 		print("\nPrizes available:")
 		for y in self.noshow_money:
 			for index,j in enumerate(self.moneytodisplay):
 				if j == y:
 					self.moneytodisplay[index]="."
+				else:
+					self.prize = j
 		print(str(self.moneytodisplay).replace("[","").replace("]","").replace(",","$").replace("\'","").replace(".$ ",""),end="$\n")
 		print("OK Player, enter a box: ")
 		testarray=[]
 		print(len(testarray))
 		if "." in self.moneytodisplay:
 			testarray=self.moneytodisplay.remove(".")
-		box=int(input(">>> # "))
+		box=int(input(">>> # "))-1
 		if len(self.moneytodisplay) == 1:
 			self.lost=True
-		if box == 22:
-			box -= 1
-		print("Box " + str(box) + " has " + self.boxes[box][1] + "$\n\n")
+		print("Box %s has %s" % (str(box+1), self.boxes[box][1]))
 		self.noshow_money.append(str(self.boxes[box][1]))
-		self.noshow_box.append(self.boxes[box-1])
+		self.noshow_box.append(self.boxes[box])
 	def announce(self):
-		print("Your prize is: " + str(self.boxes))
+		print("Your prize is: %s" % str(self.prize))
+		if str(self.prize) is not "250000":
+			print("You lost, you did not get 250000 as the last box.")
 dond = DealOrNoDeal()
 while dond.lost == False:
 	dond.startGame()
