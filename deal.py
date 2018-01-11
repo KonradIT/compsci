@@ -1,4 +1,4 @@
-#Deal||!Deal game
+#Deal|!Deal game
 
 import random
 
@@ -14,12 +14,14 @@ class DealOrNoDeal:
 		print("| ",end="")
 		for i in self.boxes:
 			print(i[0],end=" | ")
-		self.playerbox=int(input("\n>>> $ "))
 		self.lost = False
 		self.noshow_money=[]
 		self.noshow_box=[]
 		self.testarray=[]
 		self.prize=0
+		self.playerbox=int(input("\n>>> $ "))
+		self.noshow_box.append(self.playerbox)
+		self.bankoffercount=0
 	def startGame(self):
 
 		print("| ",end="")
@@ -46,8 +48,16 @@ class DealOrNoDeal:
 		print("Box %s has %s" % (str(box+1), self.boxes[box][1]))
 		self.noshow_money.append(str(self.boxes[box][1]))
 		self.noshow_box.append(self.boxes[box])
+		self.bankoffercount += 1
+		if self.bankoffercount == 6:
+			self.bank()
+	def bank(self):
+		self.bankoffercount=0
+		print("Your offer is %s" % (int(self.prize)/100*60))
+		if input("Accept offer? y/n ").lower == "y":
+			exit()
 	def announce(self):
-		print("Your prize is: %s" % str(self.prize))
+		print("Your prize is: %s and the box you chose at the start which is %s" % (str(self.prize), self.boxes[self.playerbox][1]))
 		if str(self.prize) is not "250000":
 			print("You lost, you did not get 250000 as the last box.")
 dond = DealOrNoDeal()
