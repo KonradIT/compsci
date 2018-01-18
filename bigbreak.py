@@ -85,7 +85,7 @@ class SnookerPlayer:
 				print("Black.... 70$ for you.")
 			elif color == "Y":
 				self.cash += 40
-				print("Yellow.... 100$ for you.")
+				print("Yellow.... 40$ for you.")
 			elif color == "P":
 				self.cash += 120
 				print("Purple.... 120$ for you.")
