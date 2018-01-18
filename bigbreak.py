@@ -28,7 +28,7 @@ class BigBreak:
 							["What's the capital of sweden","stockholm"],
 							["What's the capital of spain","madrid"],
 							["largest river...","amazon"],
-							["What is the capital of Uganda", "Kampala"]
+							["What is the capital of Uganda", "kampala"]
 						],
 						[
 							["Who won the US Presidential election in 2016","donald trump"],
